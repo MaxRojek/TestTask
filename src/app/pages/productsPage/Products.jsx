@@ -8,7 +8,7 @@ import {
 import Navbar from "../../components/Navbar/Navbar";
 import globalStateContext from "../../../globalContext/globalContext";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import CardModalDetails from "../../components/CardDetailsModa/CardModalDetails";
+import CardModalDetails from "../../components/CardDetailsModal/CardModalDetails";
 import NoResultsMessage from "../../components/NoResultsMessage/NoResultsMessage";
 import PaginationComponent from "../../components/Pagination/Pagination";
 
@@ -46,6 +46,11 @@ export const Products = () => {
     setData([]);
     fetchData();
   }, [promo, active, page, currentPage]);
+  useEffect(() => {
+    setCurrentPage(1);
+    setData([]);
+    fetchData();
+  }, [productName]);
 
   const fetchOnclick = () => {
     setData([]);

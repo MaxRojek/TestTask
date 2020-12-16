@@ -25,7 +25,6 @@ const CardModalDetails = (props) => {
       <Modal
         centered
         show={props.open}
-        onhide={handleChangeOpen}
         animation={false}
         style={{ padding: "10px", borderRadius: "8px" }}
       >

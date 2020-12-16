@@ -10,7 +10,7 @@ import { AppRoute } from "./AppRoute.enum";
 
 export const AppRoutes = () => {
   const GlobalValues = useContext(globalStateContext);
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   const [isMobile, setIsMobile] = useState(Boolean);
 
   const updateIfMobile = () => {
@@ -27,7 +27,10 @@ export const AppRoutes = () => {
 
   return (
     <GlobalStateContextProvider
-      value={{ isLoggedDispatcher: [isLogged, setIsLogged], isMobileDispatcher: [isMobile, setIsMobile] }}
+      value={{
+        isLoggedDispatcher: [isLogged, setIsLogged],
+        isMobileDispatcher: [isMobile, setIsMobile],
+      }}
     >
       <Suspense fallback={<p>Loading...</p>}>
         <Switch>
