@@ -47,6 +47,7 @@ export const ProductCardImage = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 8px 8px 0px 0px;
+  opacity: ${(props) => (props.available ? "1" : "0.5")};
 `;
 
 export const ProductCardContentWrapper = styled.div`

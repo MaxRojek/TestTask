@@ -3,6 +3,7 @@ import {
   PageWrapper,
   ProductsWrapper,
   PagginationWrapper,
+  ProductsWrapperWrapper,
 } from "./ProductsStyle";
 
 import Navbar from "../../components/Navbar/Navbar";
@@ -101,6 +102,7 @@ export const Products = () => {
         searchName={setProductName}
       />
       <ProductsWrapper>{displayResults(data)}</ProductsWrapper>
+
       <PagginationWrapper>
         <PaginationComponent
           value={currentPage}

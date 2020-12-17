@@ -13,7 +13,7 @@ import {
   ButtonWrapper,
   PromoInfo,
 } from "./ProductCardStyle";
-import { StarFill } from "react-bootstrap-icons";
+import { StarFill, Star } from "react-bootstrap-icons";
 
 const ProductCard2 = (props) => {
   const [productRating, setProductRating] = useState(props.rating);
@@ -120,13 +120,18 @@ const ProductCard = (props) => {
         <StarFill key={i} style={{ margin: "5px" }} color="orange" size={13} />
       );
     }
+    for (let j = 0; j < 5 - rate; j++) {
+      stars.push(
+        <Star key={j} style={{ margin: "5px" }} color="grey" size={13} />
+      );
+    }
     return stars;
   };
 
   return (
     <ProductCardWrapper>
       <ProductCardImageWrapper>
-        <ProductCardImage src={props.image} />
+        <ProductCardImage available={props.active} src={props.image} />
         {props.promo ? <PromoInfo>Promo</PromoInfo> : <></>}
       </ProductCardImageWrapper>
       <ProductCardContentWrapper>

@@ -13,22 +13,30 @@ export const PageWrapper = styled.div`
 
 export const ProductsWrapper = styled.div`
   display: flex;
-  width: 100%;
-  max-width: 1600px;
+  width: 80%;
+  max-width: 1400px;
   height: fit-content;
 
   background-color: #f2f2f2;
   flex-direction: row;
   padding-left: 60px;
   padding-right: 60px;
-  justify-content: space-between;
+
   flex-wrap: wrap;
+  align-content: center;
 
   @media (max-width: 768px) {
     padding-left: 10px;
     padding-right: 10px;
+    width: 100%;
     justify-content: center;
   }
+`;
+export const ProductsWrapperWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PagginationWrapper = styled.div`

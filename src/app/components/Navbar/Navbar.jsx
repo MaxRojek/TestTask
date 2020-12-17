@@ -16,9 +16,7 @@ import { InputGroup, FormControl, Form, Nav } from "react-bootstrap";
 import { Search } from "react-bootstrap-icons";
 
 const PageWrapper = (props) => {
-  const { isLoggedDispatcher, isMobileDispatcher } = useContext(
-    globalStateContext
-  );
+  const { isLoggedDispatcher, isMobileDispatcher } = useContext(globalStateContext);
   const [isLogged, setIsLogged] = isLoggedDispatcher;
   const [isMobile] = isMobileDispatcher;
   const [searchName, setSearchName] = useState("");
@@ -50,7 +48,7 @@ const PageWrapper = (props) => {
         <InputWrapper>
           <InputGroup>
             <FormControl
-              style={{ borderRight: "none" }}
+              style={{ borderRight: "none", height: "40px" }}
               placeholder="Search"
               aria-describedby="basic-addon2"
               onChange={(e) => props.searchName(e.target.value)}
