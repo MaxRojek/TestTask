@@ -16,7 +16,7 @@ export const Products = () => {
   const { isLoggedDispatcher, isMobileDispatcher } = useContext(
     globalStateContext
   );
-  const [isLogged, setIsLogged] = isLoggedDispatcher; // to przyda się kiedyś
+  const [isLogged, setIsLogged] = isLoggedDispatcher; // usefull in future
   const [isMobile, setIsMobile] = isMobileDispatcher;
   const [data, setData] = useState([]);
   const [productName, setProductName] = useState("");
@@ -50,9 +50,10 @@ export const Products = () => {
     setCurrentPage(1);
     setData([]);
     fetchData();
-  }, [productName]);
+  }, []);
 
   const fetchOnclick = () => {
+    setCurrentPage(1);
     setData([]);
     fetchData();
   };

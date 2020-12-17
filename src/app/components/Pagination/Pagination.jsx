@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PaginationWrapper, PageNumber } from "./PaginationStyle";
+import { PaginationWrapper, PageNumber, PageNav } from "./PaginationStyle";
 const PaginationComponent = ({ value, onChange, range }) => {
   let pattern = null;
 
@@ -33,23 +33,21 @@ const PaginationComponent = ({ value, onChange, range }) => {
 
   return range > 1 ? (
     <PaginationWrapper>
-      <PageNumber disabled={value <= 1} onClick={() => changePage(value - 1)}>
+      <PageNav disabled={value <= 1} onClick={() => changePage(value - 1)}>
         First
-      </PageNumber>
+      </PageNav>
       {pattern.map((label) => (
         <PageNumber
+          key={value + label}
           onClick={() => changePage(label)}
           isActive={ActivePage(value, label)}
         >
           {label}
         </PageNumber>
       ))}
-      <PageNumber
-        disabled={value >= range}
-        onClick={() => changePage(value + 1)}
-      >
+      <PageNav disabled={value >= range} onClick={() => changePage(value + 1)}>
         Last
-      </PageNumber>
+      </PageNav>
     </PaginationWrapper>
   ) : (
     <></>

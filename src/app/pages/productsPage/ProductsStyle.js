@@ -14,7 +14,7 @@ export const PageWrapper = styled.div`
 export const ProductsWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   height: fit-content;
 
   background-color: #f2f2f2;

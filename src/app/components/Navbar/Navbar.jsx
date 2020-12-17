@@ -54,7 +54,6 @@ const PageWrapper = (props) => {
               placeholder="Search"
               aria-describedby="basic-addon2"
               onChange={(e) => props.searchName(e.target.value)}
-              onKeyUp={props.searchOnclick}
             />
             <InputGroup.Append>
               <InputGroup.Text
