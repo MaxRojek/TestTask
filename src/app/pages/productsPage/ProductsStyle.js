@@ -13,14 +13,14 @@ export const PageWrapper = styled.div`
 
 export const ProductsWrapper = styled.div`
   display: flex;
-  width: 80%;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 1500px;
   height: fit-content;
 
   background-color: #f2f2f2;
   flex-direction: row;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 110px;
+  padding-right: 10px;
 
   flex-wrap: wrap;
   align-content: center;
