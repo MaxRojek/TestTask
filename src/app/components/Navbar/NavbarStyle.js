@@ -18,8 +18,8 @@ export const NavbarWrapper = styled.div`
   padding-right: 80px;
   margin-bottom: 20px;
   @media (max-width: 768px) {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
     justify-content: flex-start;
   }
 `;

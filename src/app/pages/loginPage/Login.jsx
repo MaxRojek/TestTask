@@ -15,7 +15,9 @@ import {
 } from "./LoginStyle";
 
 export const Login = () => {
-  const { isLoggedDispatcher, isMobileDispatcher } = useContext(globalStateContext);
+  const { isLoggedDispatcher, isMobileDispatcher } = useContext(
+    globalStateContext
+  );
   const [isLogged, setIsLogged] = isLoggedDispatcher;
   const [isMobile] = isMobileDispatcher;
   const [errorMessage, setErrorMessage] = useState(false);
@@ -26,17 +28,20 @@ export const Login = () => {
   const handleLogin = async () => {
     setErrorMessage(true);
     try {
-      const response = await fetch(`https://join-tsh-api-staging.herokuapp.com/user/login`, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        `https://join-tsh-api-staging.herokuapp.com/user/login`,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify({
+            username: username,
+            password: password,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw Error(response.statusText);
@@ -67,14 +72,20 @@ export const Login = () => {
         <FormWrapper>
           <h4>Login</h4>
           <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Username</Form.Label>
-            <Form.Control onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" />
-            <Form.Label>Password</Form.Label>
-            <Form.Control onChange={(e) => setPassword(e.target.value)} placeholder="Enter password" />
+            <Form.Label style={{ marginTop: "20px" }}>Username</Form.Label>
+            <Form.Control
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username"
+            />
+            <Form.Label style={{ marginTop: "20px" }}>Password</Form.Label>
+            <Form.Control
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+            />
             <Button onClick={handleLogin} primary>
               Log in
             </Button>
-            <p>
+            <p style={{ marginTop: "10px" }}>
               <a href="">Forgot password?</a>
             </p>
             {errorMessage ? (

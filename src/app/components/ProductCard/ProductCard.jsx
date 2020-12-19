@@ -132,7 +132,16 @@ const ProductCard = (props) => {
     <ProductCardWrapper>
       <ProductCardImageWrapper>
         <ProductCardImage available={props.active} src={props.image} />
-        {props.promo ? <PromoInfo>Promo</PromoInfo> : <></>}
+
+        {props.active ? (
+          props.promo ? (
+            <PromoInfo>Promo</PromoInfo>
+          ) : (
+            <></>
+          )
+        ) : (
+          <></>
+        )}
       </ProductCardImageWrapper>
       <ProductCardContentWrapper>
         <ProductCardTitleWrapper>{props.name}</ProductCardTitleWrapper>

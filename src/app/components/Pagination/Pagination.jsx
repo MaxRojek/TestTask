@@ -33,7 +33,10 @@ const PaginationComponent = ({ value, onChange, range }) => {
 
   return range > 1 ? (
     <PaginationWrapper>
-      <PageNav disabled={value <= 1} onClick={() => changePage(value - 1)}>
+      <PageNav
+        disabled={value <= 1}
+        onClick={() => changePage(range - (range - 1))}
+      >
         First
       </PageNav>
       {pattern.map((label) => (
@@ -45,7 +48,7 @@ const PaginationComponent = ({ value, onChange, range }) => {
           {label}
         </PageNumber>
       ))}
-      <PageNav disabled={value >= range} onClick={() => changePage(value + 1)}>
+      <PageNav disabled={value >= range} onClick={() => changePage(range)}>
         Last
       </PageNav>
     </PaginationWrapper>
